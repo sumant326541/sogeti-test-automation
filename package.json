@@ -1,0 +1,14 @@
+{
+  "name": "sogeti-test-automation",
+  "version": "1.0.0",
+  "description": "Soget UI and API test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sumant Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.3"
+  }
+}
