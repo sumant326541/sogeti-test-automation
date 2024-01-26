@@ -4,11 +4,17 @@
   "description": "Soget UI and API test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "open": "cypress open",
+    "chromeheadless": "cypress run --browser chrome",
+    "chrome": "cypress run --headed chrome"
   },
   "author": "Sumant Kumar",
   "license": "ISC",
   "dependencies": {
     "cypress": "^13.6.3"
+  },
+  "devDependencies": {
+    "faker": "^5.5.3"
   }
 }

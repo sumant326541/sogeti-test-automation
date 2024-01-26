@@ -17,4 +17,9 @@
 import './commands'
 
 // Alternatively you can use CommonJS syntax:
-// require('./commands')
+//require('./commands')
+
+//default the viewport will be 1000px by 660px 
+beforeEach(() => {
+    cy.viewport(1440, 900)
+})

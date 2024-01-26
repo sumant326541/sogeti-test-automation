@@ -2,9 +2,12 @@ import home from '../pages/homePage'
 import automation from '../pages/automationPage'
 
 describe('Home Page Navigation', () => {
-  it('should verify the Services and Automation are selected when navigating to "Services" and click on "Automation" Sub link', () => {
+
+  beforeEach(() => {
     cy.visit('/')
-    cy.viewport(1440, 900)
+  });
+
+  it('should verify the Services and Automation are selected when navigating to "Services" and click on "Automation" Sub link', () => {
     home.clickAllowAllCookiesBtn()
     home.hoverOverServicesLink()
     home.clickAutomationLink()
@@ -14,6 +17,14 @@ describe('Home Page Navigation', () => {
     home.hoverOverServicesLink()
     cy.verifySelectedElementRgb(home.automationLink, 'rgb(255, 48, 76)')
 
+  })
+
+  it('should submit contact us form for automation', () => {
+    home.clickAllowAllCookiesBtn()
+    home.hoverOverServicesLink()
+    home.clickAutomationLink()
+    automation.submitForm() //verify captcah manuallay: a wait time is set for 60 sec
+    automation.verifySuccesfullSubmitForm()
   })
 
 })
