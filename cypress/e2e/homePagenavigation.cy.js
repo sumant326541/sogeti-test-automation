@@ -23,7 +23,7 @@ describe('Home Page Navigation', () => {
     home.clickAllowAllCookiesBtn()
     home.hoverOverServicesLink()
     home.clickAutomationLink()
-    automation.submitForm() //verify captcah manuallay: a wait time is set for 60 sec
+    automation.submitForm() //to verify captcah manuallay: a wait time is set for 60 sec inside submitForm()
     automation.verifySuccesfullSubmitForm()
   })
 
