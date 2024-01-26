@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/**
+    * Verify selected element by RGB colour
+    * @param ele selected element @param expectedRGB(e.g. rgb(255, 48, 76))
+    * rgb converter link : https://convertingcolors.com/hex-color-FF304C.html?search=#ff304c
+    */
+Cypress.Commands.add('verifySelectedElementRgb', (ele, expectedRGB) => {
+    ele.invoke('css', 'color').then((color) => {
+        // Perform assertions on the color
+        expect(color).to.equal(expectedRGB);
+    });
+})
