@@ -22,12 +22,12 @@ describe('API Test for Zippopotam', () => {
       });
   });
 
+  //Test data for data driven test
   const testData = [
     { country: 'us', postalCode: '90210', placeName: 'Beverly Hills' },
     { country: 'us', postalCode: '12345', placeName: 'Schenectady' },
     { country: 'ca', postalCode: 'B2R', placeName: 'Waverley' },
   ];
-
 
   testData.forEach(({ country, postalCode, placeName}) => {
     it(`should verify response code, place name and responce time, for country ${country} and postal code ${postalCode}`, () => {
