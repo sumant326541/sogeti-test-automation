@@ -1,6 +1,6 @@
 <img width="100" alt="Screenshot 2021-06-29 at 8 12 27 AM" src="https://user-images.githubusercontent.com/39675511/123728969-d2a87b00-d8b1-11eb-9ece-558d4021f816.png">
 
-# sogeti-test-automation with Cypress for UI and API
+# sogeti-test-automation using Cypress for UI and API
 
 ## Table of Contents
 
@@ -15,8 +15,8 @@
 
 ## Prerequisites
 
-- Node.js and npm installed on your machine.
-- code editor (Visual Studio Code - prefered)
+- Ensure Node.js and npm are installed on your machine.
+- Use a code editor (Visual Studio Code is preferred).
 
 ## Installation
 
@@ -33,7 +33,7 @@ npm install
 
 ## Running Tests
 - Running-All-Tests
- : Electron browser (headless) by default 
+ : Execute tests in the Electron browser (headless) by default.
 
     ```js
     npm run test
@@ -43,7 +43,7 @@ npm install
     ```js
     npm run uitest
     ```
-    Running-UI-Tests at chrome browser in headed mode
+    Execute UI tests in Chrome browser in headed mode.
 
     ```js
     npm run chrome
@@ -55,24 +55,25 @@ npm install
     ```    
 
 ## Reports
-- intigrated with mocha awesome report
-- a html report will generate in report folder 
-- run below command if html report not generated
+- Intigrated with mocha awesome report
+- An HTML report will be generated in the report folder. 
+- Run the following command if the HTML report is not generated:
 
  ```js
 npm run report
 ``` 
 ## Screenshots
 
-screenshots of failed step folder: cpress/screenshots
+Screenshots of failed steps can be found in the Cypress/screenshots folder.
 
 ## Videos Recording
 
-test execution screen recrding folder: cypress/video
+Test execution screen recordings are saved in the Cypress/video folder.
 
 ## CI with GitHub Action
-- .github/workflows/push.yml - work flow: on each push - all test will execute
-- CheckAll workflows report [here](https://github.com/sumant326541/sogeti-test-automation/actions)
+- The workflow is defined in .github/workflows/push.yml.
+- On each push, all tests will be executed.
+- Check all workflow reports  [here](https://github.com/sumant326541/sogeti-test-automation/actions)
 
 
 

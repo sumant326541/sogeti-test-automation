@@ -1,4 +1,4 @@
-name: End-to-end tests
+name: Automated Tests on Push
 on: push
 jobs:
   cypress-run:
