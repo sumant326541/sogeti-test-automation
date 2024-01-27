@@ -6,8 +6,10 @@
   "scripts": {
     "test": "cypress run",
     "open": "cypress open",
-    "chromeheadless": "cypress run --browser chrome",
-    "chrome": "cypress run --headed chrome"
+    "chromeheadless": "cypress run --spec 'cypress/e2e/ui_tests/*.cy.js' --browser chrome",
+    "chrome": "cypress run --spec 'cypress/e2e/ui_tests/*.cy.js' --headed chrome",
+    "apitest": "cypress run --spec 'cypress/e2e/api_tests/*.cy.js'",
+    "uitest": "cypress run --spec 'cypress/e2e/ui_tests/*.cy.js'"
   },
   "author": "Sumant Kumar",
   "license": "ISC",
