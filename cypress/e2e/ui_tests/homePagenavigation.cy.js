@@ -4,7 +4,6 @@ import automation from '../../pages/automationPage'
 describe('Home Page Navigation', () => {
 
   beforeEach(() => {
-    cy.viewport(1440, 900) //default the viewport will be 1000px by 660px 
     cy.visit('/')
   });
 
@@ -14,7 +13,7 @@ describe('Home Page Navigation', () => {
     home.clickAutomationLink()
     cy.url().should('eq', 'https://www.sogeti.com/services/automation/');
     automation.pageTitle.should('have.text', 'Automation');
-    cy.verifySelectedElementRgb(home.servicesLink, 'rgb(255, 48, 76)')
+    cy.verifySelectedElementRgb(home.servicesLink, 'rgb(255, 48, 76)') //custom command added in support/command.js
     home.hoverOverServicesLink()
     cy.verifySelectedElementRgb(home.automationLink, 'rgb(255, 48, 76)')
 

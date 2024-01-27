@@ -11,7 +11,7 @@
     "apitest": "cypress run --spec 'cypress/e2e/api_tests/*.cy.js'",
     "uitest": "cypress run --spec 'cypress/e2e/ui_tests/*.cy.js'",
     "clear-reports": "rm -rf cypress/reports/mochawesome && mkdir -p cypress/reports/mochawesome",
-    "generate-report": "npx marge cypress/reports/mochawesome/mochawesome-report.json -o cypress/reports/mochawesome/finalHtmlReport",
+    "generate-report": "npx marge cypress/reports/mochawesome/mochawesome-report.json -o cypress/reports/mochawesome/test-html-report",
     "merge-report": "npx mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/mochawesome/mochawesome-report.json",
     "report":"npm run merge-report && npm run generate-report"
   },
