@@ -1,4 +1,4 @@
-describe('API Test for http://api.zippopotam.us', () => {
+describe('API Test for Zippopotam', () => {
   it('should verify response code, country, state, post cade and place for Stuttgart', () => {
 
     cy.request('http://api.zippopotam.us/de/bw/stuttgart')
@@ -21,4 +21,33 @@ describe('API Test for http://api.zippopotam.us', () => {
 
       });
   });
+
+  const testData = [
+    { country: 'us', postalCode: '90210', PlaceName: 'Beverly Hills' },
+    { country: 'us', postalCode: '12345', PlaceName: 'Schenectady' },
+    { country: 'ca', postalCode: 'B2R', PlaceName: 'Waverley' },
+  ];
+
+
+  testData.forEach(({ country, postalCode }) => {
+    it(`should verify response code, place name and responce time, for country ${country} and postal code ${postalCode}`, () => {
+      cy.request(`http://api.zippopotam.us/${country}/${postalCode}`)
+        .then((response) => {
+
+          //Verify that the response status code is 200 and content type is JSON.
+          expect(response.status).to.eq(200);
+          expect(response.headers['content-type']).to.include('application/json');
+
+          //Verify that the response time is below 1s.
+          expect(response.duration).to.be.lessThan(1000); // Assuming response time is in milliseconds
+
+          // Verify in Response - "Place Name" for each input "Country" and "Postal Code".
+          const placeName = response.body.places[0]['place name'];
+          expect(placeName).to.exist;
+          cy.log(`Place Name for country ${country} and ${postalCode} is : ${placeName}`);
+        });
+    });
+  });
+
+
 });
