@@ -23,13 +23,13 @@ describe('API Test for Zippopotam', () => {
   });
 
   const testData = [
-    { country: 'us', postalCode: '90210', PlaceName: 'Beverly Hills' },
-    { country: 'us', postalCode: '12345', PlaceName: 'Schenectady' },
-    { country: 'ca', postalCode: 'B2R', PlaceName: 'Waverley' },
+    { country: 'us', postalCode: '90210', placeName: 'Beverly Hills' },
+    { country: 'us', postalCode: '12345', placeName: 'Schenectady' },
+    { country: 'ca', postalCode: 'B2R', placeName: 'Waverley' },
   ];
 
 
-  testData.forEach(({ country, postalCode }) => {
+  testData.forEach(({ country, postalCode, placeName}) => {
     it(`should verify response code, place name and responce time, for country ${country} and postal code ${postalCode}`, () => {
       cy.request(`http://api.zippopotam.us/${country}/${postalCode}`)
         .then((response) => {
@@ -42,9 +42,9 @@ describe('API Test for Zippopotam', () => {
           expect(response.duration).to.be.lessThan(1000); // Assuming response time is in milliseconds
 
           // Verify in Response - "Place Name" for each input "Country" and "Postal Code".
-          const placeName = response.body.places[0]['place name'];
-          expect(placeName).to.exist;
-          cy.log(`Place Name for country ${country} and ${postalCode} is : ${placeName}`);
+          const place = response.body.places[0]['place name'];
+          expect(place).to.equal(`${placeName}`);
+
         });
     });
   });
