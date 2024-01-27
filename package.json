@@ -1,7 +1,7 @@
 {
   "name": "sogeti-test-automation",
   "version": "1.0.0",
-  "description": "Soget UI and API test",
+  "description": "Sogeti UI and API test",
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
