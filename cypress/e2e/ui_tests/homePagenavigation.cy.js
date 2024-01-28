@@ -1,5 +1,6 @@
 import home from '../../pages/homePage'
 import automation from '../../pages/automationPage'
+import data from '../../fixtures/testdata.json'
 
 describe('Home Page Navigation', () => {
 
@@ -11,11 +12,11 @@ describe('Home Page Navigation', () => {
     home.clickAllowAllCookiesBtn()
     home.hoverOverServicesLink()
     home.clickAutomationLink()
-    cy.url().should('eq', 'https://www.sogeti.com/services/automation/');
+    cy.url().should('eq', data.automationPageUrl);
     automation.pageTitle.should('have.text', 'Automation');
-    cy.verifySelectedElementRgb(home.servicesLink, 'rgb(255, 48, 76)') //custom command added in support/command.js
+    cy.verifySelectedElementRgb(home.servicesLink, data.selectedelementrgbcolor) //custom command added in support/command.js
     home.hoverOverServicesLink()
-    cy.verifySelectedElementRgb(home.automationLink, 'rgb(255, 48, 76)')
+    cy.verifySelectedElementRgb(home.automationLink, data.selectedelementrgbcolor)
 
   })
 
